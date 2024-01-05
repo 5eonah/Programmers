@@ -1,3 +1,3 @@
-select name
-from animal_ins
-where datetime=(select min(datetime) from animal_ins)
+SELECT name
+FROM animal_ins
+WHERE datetime IN (SELECT MIN(datetime) FROM animal_ins)
