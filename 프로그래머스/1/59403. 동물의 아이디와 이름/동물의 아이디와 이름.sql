@@ -1,3 +1,3 @@
-select animal_id, name
-from animal_ins
-order by 1
+SELECT animal_id, name
+FROM ANIMAL_INS
+ORDER BY 1
