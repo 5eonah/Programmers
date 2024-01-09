@@ -1,5 +1,2 @@
 def solution(n):
-    list=[]
-    for i in str(n):
-        list.append(int(i))
-    return list[::-1]
+    return [int(i) for i in str(n)][::-1]
