@@ -8,7 +8,5 @@ def solution(s):
                 answer.pop()
             else:
                 return False
-    if answer==[]:
-        return True
-    else:
-        return False
+            
+    return True if answer==[] else False
