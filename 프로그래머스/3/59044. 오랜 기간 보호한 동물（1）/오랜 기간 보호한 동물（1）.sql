@@ -1,5 +1,7 @@
-select i.name, i.datetime
-from animal_ins i left join animal_outs o on i.animal_id=o.animal_id
-where o.datetime is null
-ORDER BY i.datetime
-LIMIT 3
+SELECT *
+FROM
+(SELECT i.name, i.datetime
+FROM animal_ins i LEFT JOIN animal_outs o ON i.animal_id=o.animal_id
+WHERE o.animal_id IS NULL
+ORDER BY i.datetime) a
+WHERE ROWNUM<=3
