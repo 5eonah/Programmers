@@ -1,5 +1,6 @@
 SELECT food_type, rest_id, rest_name, favorites
-FROM rest_info
-WHERE favorites in (SELECT max(favorites) FROM rest_info GROUP BY food_type)
-GROUP BY 1
-ORDER BY 1 desc
+FROM (SELECT food_type, rest_id, rest_name, favorites,
+      RANK() OVER(PARTITION BY food_type ORDER BY favorites DESC) rk
+      FROM rest_info)
+WHERE rk=1
+ORDER BY food_type DESC;
